@@ -38,13 +38,6 @@ workbox.routing.registerRoute(
     })
 );
 
-workbox.routing.registerRoute(
-    /https:\/\/a9007154.netlify.com(\/?)$/,
-    new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'index-cache',
-    })
-);
-
 workbox.routing.setDefaultHandler(
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'default-cache',
