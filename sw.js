@@ -3,7 +3,12 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 workbox.setConfig({
     debug: true
   });
-  
+
+workbox.precaching.precacheAndRoute([
+    '/index.html',
+    '/js/index.js',
+    '/img/add.svg'
+]);
 
 workbox.routing.registerRoute(
     /\.css$/,
