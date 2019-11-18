@@ -40,5 +40,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.setDefaultHandler(
-    new workbox.strategies.StaleWhileRevalidate()
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'default-cache',
+    })
 );
