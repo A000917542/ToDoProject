@@ -1,3 +1,5 @@
+"use strict";
+
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 workbox.loadModule('workbox-strategies');
@@ -35,10 +37,5 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.setDefaultHandler(
-    (args) => {
-        if (args.event.request.method === 'GET') {
-            return workbox.strategies.StaleWhileRevalidate.handle(args); // use default strategy
-        }
-        return fetch(args.event.request);
-    }
+    new workbox.strategies.StaleWhileRevalidate()
 );
