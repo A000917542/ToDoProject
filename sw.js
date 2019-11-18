@@ -3,7 +3,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 workbox.precaching.precacheAndRoute([
-    '/index.htm'
+    '/index.htm',
   ]);
 
 workbox.routing.registerRoute(
@@ -17,6 +17,13 @@ workbox.routing.registerRoute(
     /\.js$/,
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'js-cache',
+    })
+);
+
+workbox.routing.registerRoute(
+    /https:\/\/a9007154.netlify.com(\/?)$/,
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'index-cache',
     })
 );
 
