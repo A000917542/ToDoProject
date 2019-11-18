@@ -24,6 +24,13 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
+    /https:\/\/a9007154.netlify.com(\/?)/,
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'html-cache',
+    })
+);
+
+workbox.routing.registerRoute(
     /\.(?:png|jpg|jpeg|svg|gif)$/,
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'img-cache',
