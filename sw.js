@@ -5,7 +5,7 @@ workbox.setConfig({
   });
 
 workbox.precaching.precacheAndRoute([
-    '/index.html',
+    '/index.htm',
     '/js/index.js',
     '/img/add.svg'
 ]);
