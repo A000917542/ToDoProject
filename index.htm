@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To-Do List</title>
+    <meta name="description" content="A simple To Do App">
+    
     <style>
         /* Reset / Normalize */
 
@@ -121,6 +123,16 @@
             border-top: 0.1em solid lightgray;
         }
     </style>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
+
 </head>
 
 <body>
@@ -148,7 +160,7 @@
             <label for="todo-select"></label>
         </li>
     </template>
-    <script src="js/index.js"></script>
+    <script src="js/index.js" async defer></script>
 </body>
 
 </html>
