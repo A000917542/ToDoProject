@@ -30,10 +30,6 @@
         opacity: 1;
     }
 
-    99% {
-        transform: scaleY(1);
-    }
-
     100% {
         -webkit-transform: rotateX(-100deg);
                 transform: rotateX(-100deg);
