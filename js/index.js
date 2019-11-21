@@ -29,7 +29,15 @@ function deleteItem(event, btn) {
     const input = item.querySelector('input');
     const id = input.id;
     localStorage.removeItem(id);
-    item.addEventListener('animationend webkitAnimationEnd oAnimationEnd', () => {
+    item.addEventListener('animationend', () => {
+        debug;
+        item.parentElement.removeChild(item); 
+    });
+    item.addEventListener('webkitAnimationEnd', () => {
+        debug;
+        item.parentElement.removeChild(item); 
+    });
+    item.addEventListener('oAnimationEnd', () => {
         debug;
         item.parentElement.removeChild(item); 
     });
