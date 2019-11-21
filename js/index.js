@@ -30,13 +30,13 @@ function deleteItem(event, btn) {
     const id = input.id;
     localStorage.removeItem(id);
     item.addEventListener('animationend', () => {
-        item.parentElement.removeChild(item); 
+        item.parentElement.removeChild(item);
     });
     item.addEventListener('webkitAnimationEnd', () => {
-        item.parentElement.removeChild(item); 
+        item.parentElement.removeChild(item);
     });
     item.addEventListener('oAnimationEnd', () => {
-        item.parentElement.removeChild(item); 
+        item.parentElement.removeChild(item);
     });
     item.classList.toggle('delete-item');
 }

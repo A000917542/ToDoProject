@@ -45,8 +45,6 @@
     opacity: 0;
     animation: swing-in 0.5s ease-in 0.1s 1 forwards;
     border: thin grey solid;
-    perspective-origin: top;
-    perspective: 18in;
 }
 
 .js .delete-item {
