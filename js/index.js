@@ -30,15 +30,12 @@ function deleteItem(event, btn) {
     const id = input.id;
     localStorage.removeItem(id);
     item.addEventListener('animationend', () => {
-        debug;
         item.parentElement.removeChild(item); 
     });
     item.addEventListener('webkitAnimationEnd', () => {
-        debug;
         item.parentElement.removeChild(item); 
     });
     item.addEventListener('oAnimationEnd', () => {
-        debug;
         item.parentElement.removeChild(item); 
     });
     item.classList.toggle('delete-item');
