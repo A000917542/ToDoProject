@@ -24,6 +24,14 @@ function checkBoxUpdate(cb) {
     window.localStorage.setItem(id, itemString);
 }
 
+function deleteItem(event, btn) {
+    const item = btn.offsetParent;
+    const input = item.querySelector('input');
+    const id = input.id;
+    localStorage.removeItem(id);
+    item.parentElement.removeChild(item);
+}
+
 function addNewToDo(event) {
     event.preventDefault();
 

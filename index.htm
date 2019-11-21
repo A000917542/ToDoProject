@@ -113,12 +113,20 @@
         }
 
         #todo-list>li {
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+            grid-template-rows: 1fr;
+            align-items: center;
             height: 3em;
             min-width: 12rem;
             width: 60vw;
             padding: 0 0 0 2.5rem;
-            display: flex;
-            align-items: center;
+        }
+
+        #todo-list>li label
+        ,#todo-list>li input {
+            grid-row: 1;
+            grid-column: 1;
         }
 
         #todo-add {
@@ -164,6 +172,9 @@
         <li class="todo-item">
             <input id="todo-select" type="checkbox" name="todo-select" onclick="checkBoxUpdate(this)">
             <label for="todo-select"></label>
+            <div>
+                <button type="button" onclick="deleteItem(event, this)" class="delete-item">Delete</button>
+            </div>
         </li>
     </template>
     <script src="/js/index.js" async defer></script>
