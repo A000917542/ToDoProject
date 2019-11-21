@@ -6,26 +6,53 @@
 
 @keyframes swing-in {
     0% {
-      -webkit-transform: rotateX(-100deg);
-              transform: rotateX(-100deg);
-      -webkit-transform-origin: top;
-              transform-origin: top;
-      opacity: 0;
+        -webkit-transform: rotateX(-100deg);
+                transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+                transform-origin: top;
+        opacity: 0;
     }
     100% {
-      -webkit-transform: rotateX(0deg);
-              transform: rotateX(0deg);
-      -webkit-transform-origin: top;
-              transform-origin: top;
-      opacity: 1;
+        -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+                transform-origin: top;
+        opacity: 1;
     }
-  }
+}
+
+@keyframes swing-out {
+    0% {
+        -webkit-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+                transform-origin: top;
+        opacity: 1;
+    }
+
+    99% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        -webkit-transform: rotateX(-100deg);
+                transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+                transform-origin: top;
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
 
 .js .todo-item {
     padding: 0 0 0 2.5rem;
     opacity: 0;
-    animation: swing-in 0.5s ease-in-out 0.1s 1 forwards;
+    animation: swing-in 0.5s ease-in 0.1s 1 forwards;
     border: thin grey solid;
     perspective-origin: top;
     perspective: 18in;
+}
+
+.js .delete-item {
+    animation: swing-out 0.5s ease-out 0.1s 1 forwards;
 }
