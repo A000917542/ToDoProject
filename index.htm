@@ -104,9 +104,6 @@
         }
 
         #todo-list {
-            display: grid;
-            grid-template-columns: max-content;
-            grid-auto-rows: max-content;
             height: 100%;
             font-size: 1.3rem;
             list-style: none;
@@ -121,6 +118,11 @@
             min-width: 12rem;
             width: 60vw;
             padding: 0 0 0 2.5rem;
+            transition: height 0.5s;
+        }
+
+        #todo-list>li:hover {
+            height: 4em;
         }
 
         #todo-list>li label
