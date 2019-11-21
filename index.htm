@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To-Do List</title>
     <meta name="description" content="A simple To Do App">
-    
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
     <style>
         /* Reset / Normalize */
 
@@ -112,6 +114,11 @@
 
         #todo-list>li {
             height: 3em;
+            min-width: 12rem;
+            width: 60%;
+            padding: 0 0 0 2.5rem;
+            display: flex;
+            align-items: center;
         }
 
         #todo-add {
@@ -123,6 +130,7 @@
             border-top: 0.1em solid lightgray;
         }
     </style>
+    <link rel="preload" as="style" href="/css/style.css" onload="this.rel='stylesheet'">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -153,12 +161,12 @@
         Copyright &copy;2019
     </footer>
     <template id="todo-item">
-        <li>
+        <li class="todo-item">
             <input id="todo-select" type="checkbox" name="todo-select" onclick="checkBoxUpdate(this)">
             <label for="todo-select"></label>
         </li>
     </template>
-    <script src="js/index.js" async defer></script>
+    <script src="/js/index.js" async defer></script>
 </body>
 
 </html>
