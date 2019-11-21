@@ -31,7 +31,7 @@
     }
 
     99% {
-        transform: scaleX(1);
+        transform: scaleY(1);
     }
 
     100% {
@@ -39,7 +39,7 @@
                 transform: rotateX(-100deg);
         -webkit-transform-origin: top;
                 transform-origin: top;
-        transform: scaleX(0);
+        transform: scaleY(0);
         opacity: 0;
     }
 }
