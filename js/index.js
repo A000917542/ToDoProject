@@ -87,8 +87,8 @@ function addNewToDo(event) {
 }
 
 function updateItemBg(evt) {
-    this.style.setProperty("--item-offset-x", evt.clientX - this.offsetLeft);
-    this.style.setProperty("--item-offset-y", evt.clientY - this.offsetTop);
+    this.style.setProperty("--item-offset-x", `${evt.clientX - this.offsetLeft}px`);
+    this.style.setProperty("--item-offset-y", `${evt.clientY - this.offsetTop}px`);
 }
 
 run();
