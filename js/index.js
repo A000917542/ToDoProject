@@ -10,8 +10,11 @@ function loadToDos() {
     Object.keys(db).forEach((item) => {
         const node = document.createRange().createContextualFragment(db.getItem(item));
         list.appendChild(node);
-        if ('style' in node) {
-            node.addEventListener('mousemove', updateItemBg);
+        
+        item = list.querySelector(`#${id}`);
+
+        if ('style' in item) {
+            item.addEventListener('mousemove', updateItemBg);
         }
     });
 }
@@ -69,7 +72,9 @@ function addNewToDo(event) {
         const itemString = new XMLSerializer().serializeToString(item);
         db.setItem(id, itemString);
 
-        list.appendChild(item);
+        const node = list.appendChild(item);
+
+        item = list.querySelector(`#${id}`);
 
         if ('style' in item) {
             item.addEventListener('mousemove', updateItemBg);
