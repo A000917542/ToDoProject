@@ -48,7 +48,7 @@
 }
 
 .js .todo-item:hover {
-    background-image: radial-gradient(circle at var(--item-offset-x, 50%) var(--item-offset-y, 50%), rgba(251,251,251, 1) 5%, rgba(235,237,238, 0) 100%);
+    background-image: radial-gradient(circle at var(--item-offset-x, 50%) var(--item-offset-y, 50%), rgba(255,246,236,1) 1rem, rgba(100,46,122,0.23) 100.2%);
 }
 
 .js .delete-item {
