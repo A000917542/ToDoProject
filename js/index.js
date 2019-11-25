@@ -70,9 +70,9 @@ function addNewToDo(event) {
         const itemString = new XMLSerializer().serializeToString(item);
         db.setItem(id, itemString);
 
-        const node = list.appendChild(item);
+        list.appendChild(item);
 
-        node = list.querySelector(`#${id}`);
+        const node = list.querySelector(`#${id}`);
 
         if ('style' in node) {
             node.addEventListener('mousemove', updateItemBg);
