@@ -9,6 +9,9 @@ function loadToDos() {
     const list = document.querySelector('#todo-list');
     Object.keys(db).forEach((item) => {
         const node = document.createRange().createContextualFragment(db.getItem(item));
+        if ('style' in node) {
+            node.addEventListener('mousemove', updateItemBg);
+        }
         list.appendChild(node);
     });
 }
@@ -72,4 +75,10 @@ function addNewToDo(event) {
     todo.value = '';
 }
 
+function updateItemBg(evt) {
+    this.style.setProperty("--item-offset-x", evt.clientX - rect.left);
+    this.style.setProperty("--item-offset-y", evt.clientY - rect.top);
+}
+
 run();
+

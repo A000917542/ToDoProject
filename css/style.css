@@ -47,6 +47,10 @@
     border: thin grey solid;
 }
 
+.js .todo-item:hover {
+    background-image: radial-gradient(center to var(--item-offset-x, 50%) var(--item-offset-y, 50%), rgba(74, 76, 78, 1) 5%, rgba(17,24,31,0) 100%);
+}
+
 .js .delete-item {
     animation: swing-out 0.5s ease-out 0.1s 1 forwards;
 }
