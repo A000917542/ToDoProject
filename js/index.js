@@ -13,7 +13,7 @@ function loadToDos() {
         
         list.appendChild(node);
 
-        const item = list.querySelector(`#${id}`);
+        const item = list.querySelector(`#${id}`).parentElement;
 
         if ('style' in item) {
             item.addEventListener('mousemove', updateItemBg);
@@ -76,7 +76,7 @@ function addNewToDo(event) {
 
         list.appendChild(item);
 
-        const node = list.querySelector(`#${id}`);
+        const node = list.querySelector(`#${id}`).parentElement;
 
         if ('style' in node) {
             node.addEventListener('mousemove', updateItemBg);
