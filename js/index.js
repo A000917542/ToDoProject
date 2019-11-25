@@ -7,8 +7,8 @@ function run() {
 function loadToDos() {
     const db = window.localStorage;
     const list = document.querySelector('#todo-list');
-    Object.keys(db).forEach((item) => {
-        const node = document.createRange().createContextualFragment(db.getItem(item));
+    Object.keys(db).forEach((todoItem) => {
+        const node = document.createRange().createContextualFragment(db.getItem(todoItem));
         const item = list.appendChild(node);
 
         if ('style' in item) {
