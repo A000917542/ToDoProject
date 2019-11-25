@@ -9,10 +9,10 @@ function loadToDos() {
     const list = document.querySelector('#todo-list');
     Object.keys(db).forEach((item) => {
         const node = document.createRange().createContextualFragment(db.getItem(item));
+        list.appendChild(node);
         if ('style' in node) {
             node.addEventListener('mousemove', updateItemBg);
         }
-        list.appendChild(node);
     });
 }
 
@@ -70,6 +70,10 @@ function addNewToDo(event) {
         db.setItem(id, itemString);
 
         list.appendChild(item);
+
+        if ('style' in item) {
+            item.addEventListener('mousemove', updateItemBg);
+        }
     }
 
     todo.value = '';
