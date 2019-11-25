@@ -9,7 +9,11 @@ function loadToDos() {
     const list = document.querySelector('#todo-list');
     Object.keys(db).forEach((todoItem) => {
         const node = document.createRange().createContextualFragment(db.getItem(todoItem));
-        const item = list.appendChild(node);
+        const id = node.querySelector('input').id;
+        
+        list.appendChild(node);
+
+        const item = list.querySelector(`#${id}`);
 
         if ('style' in item) {
             item.addEventListener('mousemove', updateItemBg);
