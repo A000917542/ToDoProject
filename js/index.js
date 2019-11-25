@@ -72,10 +72,10 @@ function addNewToDo(event) {
 
         const node = list.appendChild(item);
 
-        item = list.querySelector(`#${id}`);
+        node = list.querySelector(`#${id}`);
 
-        if ('style' in item) {
-            item.addEventListener('mousemove', updateItemBg);
+        if ('style' in node) {
+            node.addEventListener('mousemove', updateItemBg);
         }
     }
 
