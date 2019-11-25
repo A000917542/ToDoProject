@@ -24,13 +24,14 @@
         }
 
         :root {
-            --offset-x: 50%;
-            --offset-y: 50%;
+            --root-font-size: calc(1rem + (5) * ((100vw - 300px) / (1080 - 300)));
         }
 
         html {
             box-sizing: border-box;
+            font-size: 1rem;
             font-size: calc(1rem + (5) * ((100vw - 300px) / (1080 - 300)));
+            font-size: var(--root-font-size, 1rem);
         }
 
         :root,
@@ -122,8 +123,14 @@
             height: 3em;
             min-width: 12rem;
             width: 60vw;
-            padding: 0 0 0 2.5rem;
+            padding: 0 .5rem 0 2.5rem;
             transition: height 0.5s;
+        }
+
+        @media screen and (max-width: 480) {
+            #todo-list>li {
+                width: initial;
+            }
         }
 
         #todo-list>li:hover {
